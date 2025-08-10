@@ -11,7 +11,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 - [x] Qwen-Image-Lightning-8steps-V1.0
 - [ ] Qwen-Image-Lightning-4steps-V1.0
-- [ ] ComfyUI Workflow
+- [x] ComfyUI Workflow
 - [ ] Improve Quality
 
 ## 📑 Demo Images
@@ -26,6 +26,21 @@ The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image) and [Qwe
 | A coffee shop entrance features a chalkboard sign reading "Qwen Coffee 😊 $2 per cup," with a neon light beside it displaying "通义千问". Next to it hangs a poster showing a beautiful Chinese woman, and beneath the poster is written "π≈3.1415926-53589793-23846264-33832795-02384197".   | ![badcase1](https://github.com/user-attachments/assets/7ec02505-d6e2-4397-93a0-fa3afb496c98)   | ![badcase1](https://github.com/user-attachments/assets/a2f519b9-132c-458b-bf39-dac86be2fe10)   |
 
 The last row shows a badcase of the distilled model.
+
+## 🎨 ComfyUI Workflow
+
+ComfyUI workflow is available in the `workflows/` directory. The workflow is based on the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and has been verified with ComfyUI repository at commit ID `37d620a6b85f61b824363ed8170db373726ca45a`.
+
+### Workflow Files
+
+- `workflows/qwen-image-8steps.json` - 8-step lightning workflow for Qwen-Image
+
+### Usage
+
+1. Install ComfyUI following the [official instructions](https://github.com/comfyanonymous/ComfyUI)
+2. Load the workflow file from `workflows/qwen-image-8steps.json` in ComfyUI
+3. Place `Qwen-Image-Lightning-8steps-V1.0.safetensors` in the `ComfyUI/models/loras/` directory.
+4. Run the workflow to generate images with 8 steps
 
 ## 🚀 Run Qwen-Image-Lightning-8steps-V1.0
 
