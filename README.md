@@ -1,8 +1,6 @@
 # Qwen-Image-Lightning
 
 
------
-
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News!!
@@ -10,6 +8,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * Aug 08, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.0.safetensors).
 
 ## 📑 Todo List
+
 - [x] Qwen-Image-Lightning-8steps-V1.0
 - [ ] Qwen-Image-Lightning-4steps-V1.0
 - [ ] ComfyUI Workflow
@@ -72,6 +71,6 @@ The models in this repository are licensed under the Apache 2.0 License. We clai
 
 ## Acknowledgements
 
-We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0. 
+We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0.
 
 The evaluation text prompts are from [Qwen-Image Demo]https://huggingface.co/spaces/Qwen/Qwen-Image).
