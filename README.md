@@ -1,10 +1,7 @@
-# Wan2.2-Lightning
+# Qwen-Image-Lightning
 
 
 -----
-
-<!-- [**Wan2.2-Lightning: Distill Wan2.2 Family into 4 Steps**] <be> -->
-
 
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
@@ -20,7 +17,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 📑 Demo Images
 
-The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image). Generated with seed 42, you can reproduce the results in this repo. 
+The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image). Generated with seed 42, you can reproduce the results with [examples/prompt_list.txt](examples/prompt_list.txt).
 
 | Prompt         | Base NEF=100               | Qwen-Image-Lightning-8steps-V1.0 NEF=8|
 |-----------------|----------------------------|----------------------------|
@@ -77,4 +74,4 @@ The models in this repository are licensed under the Apache 2.0 License. We clai
 
 We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0. 
 
-We also adopt the evaluation text prompts from [Qwen-Image Demo]https://huggingface.co/spaces/Qwen/Qwen-Image).
+The evaluation text prompts are from [Qwen-Image Demo]https://huggingface.co/spaces/Qwen/Qwen-Image).
