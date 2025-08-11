@@ -385,7 +385,7 @@
       "widgets_values": [
         765782643668376,
         "randomize",
-        8,
+        4,
         1,
         "euler",
         "simple",
@@ -456,7 +456,7 @@
       "properties": {
         "Node name for S&R": "LoraLoaderModelOnly"
       },
-      "widgets_values": ["Qwen-Image-Lightning-8steps-V1.0.safetensors", 1]
+      "widgets_values": ["Qwen-Image-Lightning-4steps-V1.0.safetensors", 1]
     },
     {
       "id": 66,
