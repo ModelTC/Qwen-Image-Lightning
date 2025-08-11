@@ -63,8 +63,8 @@ def main(
     lora_path: str | None,
     out_dir: str,
     base_seed: int,
-    num_inference_steps: int=8,
-    true_cfg_scale: float=1.0,
+    num_inference_steps: int = 8,
+    true_cfg_scale: float = 1.0,
 ):
     if torch.cuda.is_available():
         torch_dtype = torch.bfloat16
@@ -126,7 +126,6 @@ def main(
         prompt_list = f.read().splitlines()
     os.makedirs(out_dir, exist_ok=True)
 
-
     for _, (width, height) in aspect_ratios.items():
         for i, prompt in enumerate(prompt_list):
             image = pipe(
@@ -139,7 +138,9 @@ def main(
                 generator=torch.Generator(device="cuda").manual_seed(base_seed),
             ).images[0]
 
-            image.save(f"{out_dir}/{i:02d}_{width}x{height}_{num_inference_steps}steps_cfg{true_cfg_scale}_example.png")
+            image.save(
+                f"{out_dir}/{i:02d}_{width}x{height}_{num_inference_steps}steps_cfg{true_cfg_scale}_example.png"
+            )
 
 
 if __name__ == "__main__":
@@ -151,15 +152,21 @@ if __name__ == "__main__":
     parser.add_argument("--lora_path", type=str, default=None)
     parser.add_argument("--base_seed", type=int, default=42)
     parser.add_argument("--model_name", type=str, default="Qwen/Qwen-Image")
+    parser.add_argument("--steps", type=int, default=None)
+    parser.add_argument("--cfg", type=float, default=None)
     args = parser.parse_args()
-    if args.lora_path is None:
-        num_inference_steps = 50
-        true_cfg_scale = 4.0
+    if args.steps is None:
+        num_inference_steps = 50 if args.lora_path is None else 8
     else:
-        assert os.path.exists(args.lora_path), f"Lora path {args.lora_path} does not exist"
-        num_inference_steps = 8
-        true_cfg_scale = 1.0
-
+        num_inference_steps = args.steps
+    if args.cfg is None:
+        true_cfg_scale = 4.0 if args.lora_path is None else 1.0
+    else:
+        true_cfg_scale = args.cfg
+    if args.lora_path is not None:
+        assert os.path.exists(args.lora_path), (
+            f"Lora path {args.lora_path} does not exist"
+        )
 
     main(
         model_name=args.model_name,

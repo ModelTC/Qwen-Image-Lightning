@@ -5,6 +5,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 🔥 Latest News!!
 
+* Aug 11, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V1.0.safetensors).
 * Aug 08, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.0.safetensors).
 
 ## 📑 Todo List
@@ -16,7 +17,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 📑 Demo Images
 
-The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image). Generated with seed 42, you can reproduce the results with [examples/prompt_list.txt](examples/prompt_list.txt).
+The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image). Generated with seed 42, you can reproduce the results with [examples/prompt_list.txt](examples/prompt_list.txt).
 
 | Prompt         | Base NEF=100               | Qwen-Image-Lightning-8steps-V1.0 NEF=8|
 |-----------------|----------------------------|----------------------------|
@@ -27,7 +28,12 @@ The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image) and [Qwe
 
 The last row shows a badcase of the distilled model.
 
-## 🚀 Run Qwen-Image-Lightning-8steps-V1.0
+## 📑 Limitation
+
+Neither the distilled models nor the Qwen-Image base model can consistently generate perfect results. We observed that the same model exhibits varying performance for the same prompt under different resolutions. A specific test case might favor one model, while other cases might yield completely opposite results. We sampled a collection of prompts [examples/prompt_list.txt](examples/prompt_list.txt), and you can compare the performance of the distilled models and the base model by running the following scripts.
+
+
+## 🚀 Run Evaluation and Test
 
 #### Installation
 
@@ -41,17 +47,24 @@ pip install "huggingface_hub[cli]"
 huggingface-cli download lightx2v/Qwen-Image-Lightning --local-dir ./Qwen-Image-Lightning
 ```
 
-Run the distilled model and compare with the base model.
-
 #### Run 8-step Model
 
 ``` sh
 # 8 steps, cfg 1.0
 python generate_with_diffusers.py \
 --prompt_list_file examples/prompt_list.txt \
---out_dir test_lora_results \
+--out_dir test_lora_8_step_results \
 --lora_path Qwen-Image-Lightning/Qwen-Image-Lightning-8steps-V1.0.safetensors \
---base_seed 42 
+--base_seed 42 --steps 8 --cfg 1.0
+```
+
+``` sh
+# 4 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/prompt_list.txt \
+--out_dir test_lora_4_step_results \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Lightning-4steps-V1.0.safetensors \
+--base_seed 42 --steps 4 --cfg 1.0
 ```
 
 #### Run base Model
@@ -61,7 +74,7 @@ python generate_with_diffusers.py \
 python generate_with_diffusers.py \
 --prompt_list_file examples/prompt_list.txt \
 --out_dir test_base_results \
---base_seed 42 
+--base_seed 42 --steps 50 --cfg 4.0
 ```
 
 
@@ -73,4 +86,4 @@ The models in this repository are licensed under the Apache 2.0 License. We clai
 
 We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0.
 
-The evaluation text prompts are from [Qwen-Image Demo](https://huggingface.co/spaces/Qwen/Qwen-Image).
+The evaluation text prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image).
