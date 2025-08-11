@@ -103,8 +103,4 @@ The models in this repository are licensed under the Apache 2.0 License. We clai
 
 We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0.
 
-<<<<<<< HEAD
 The evaluation text prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image).
-=======
-The evaluation text prompts are from [Qwen-Image Demo](https://huggingface.co/spaces/Qwen/Qwen-Image).
->>>>>>> main
