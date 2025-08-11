@@ -12,7 +12,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 - [x] Qwen-Image-Lightning-8steps-V1.0
 - [ ] Qwen-Image-Lightning-4steps-V1.0
-- [ ] ComfyUI Workflow
+- [x] ComfyUI Workflow
 - [ ] Improve Quality
 
 ## 📑 Demo Images
@@ -32,8 +32,8 @@ The last row shows a badcase of the distilled model.
 
 Neither the distilled models nor the Qwen-Image base model can consistently generate perfect results. We observed that the same model exhibits varying performance for the same prompt under different resolutions. A specific test case might favor one model, while other cases might yield completely opposite results. We sampled a collection of prompts [examples/prompt_list.txt](examples/prompt_list.txt), and you can compare the performance of the distilled models and the base model by running the following scripts.
 
-
 ## 🚀 Run Evaluation and Test
+
 
 #### Installation
 
@@ -58,6 +58,9 @@ python generate_with_diffusers.py \
 --base_seed 42 --steps 8 --cfg 1.0
 ```
 
+#### Run 4-step Model
+
+
 ``` sh
 # 4 steps, cfg 1.0
 python generate_with_diffusers.py \
@@ -77,6 +80,20 @@ python generate_with_diffusers.py \
 --base_seed 42 --steps 50 --cfg 4.0
 ```
 
+## 🎨 ComfyUI Workflow
+
+ComfyUI workflow is available in the `workflows/` directory. The workflow is based on the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and has been verified with ComfyUI repository at commit ID `37d620a6b85f61b824363ed8170db373726ca45a`.
+
+### Workflow Files
+
+- `workflows/qwen-image-8steps.json` - 8-step lightning workflow for Qwen-Image
+
+### Usage
+
+1. Install ComfyUI following the [official instructions](https://github.com/comfyanonymous/ComfyUI)
+2. Load the workflow file from `workflows/qwen-image-8steps.json` in ComfyUI
+3. Place `Qwen-Image-Lightning-8steps-V1.0.safetensors` in the `ComfyUI/models/loras/` directory.
+4. Run the workflow to generate images with 8 steps
 
 ## License Agreement
 The models in this repository are licensed under the Apache 2.0 License. We claim no rights over the your generated contents, granting you the freedom to use them while ensuring that your usage complies with the provisions of this license. You are fully accountable for your use of the models, which must not involve sharing any content that violates applicable laws, causes harm to individuals or groups, disseminates personal information intended for harm, spreads misinformation, or targets vulnerable populations. For a complete list of restrictions and details regarding your rights, please refer to the full text of the [license](LICENSE.txt).
@@ -86,4 +103,8 @@ The models in this repository are licensed under the Apache 2.0 License. We clai
 
 We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0.
 
+<<<<<<< HEAD
 The evaluation text prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image).
+=======
+The evaluation text prompts are from [Qwen-Image Demo](https://huggingface.co/spaces/Qwen/Qwen-Image).
+>>>>>>> main
