@@ -95,7 +95,7 @@ ComfyUI workflow is available in the `workflows/` directory. The workflow is bas
 2. Download and place the Qwen-Image base model following the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) (include UNet/CLIP/VAE files into proper ComfyUI folders)
 3. For 8-step workflow:
    * Load `workflows/qwen-image-8steps.json`
-   * Put `Qwen-Image-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`
+   * Put `Qwen-Image-Lightning-8steps-V1.1.safetensors` into `ComfyUI/models/loras/`
    * Ensure `KSampler` steps = 8
 4. For 4-step workflow:
    * Load `workflows/qwen-image-4steps.json`
