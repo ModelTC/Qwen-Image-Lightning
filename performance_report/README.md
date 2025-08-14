@@ -24,7 +24,7 @@ The experimental setup employed identical resolution settings and input conditio
 ## Results and Analysis
 
 ### 1. Standard Generation Tasks
-**Result**: All three models perform equally well for basic image generation on `Long number`, `Anime scene with signs`, `Classical Chinese couplets`, `Movie poster` and `PPT design` tests.
+All three models perform equally well for basic image generation on `Long number`, `Anime scene with signs`, `Classical Chinese couplets`, `Movie poster` and `PPT design` tests.
 
 **Table 1** demonstrates that the `Qwen-Image` (NFE100) achieves satisfactory inference, while the distilled variants `Qwen-Image-Lightning-8step-V1.1` (NFE8) and `Qwen-Image-Lightning-4step-V1.0` (NFE4) maintain comparable performance. Comprehensive assessment across diverse test scenarios indicates that all three model configurations deliver acceptable generation quality within their designated operational parameters.
 
