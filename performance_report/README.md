@@ -1,14 +1,14 @@
 # Qwen-Image-Lightning Performance Report
 
 
-This report presents a comparative analysis of inference performance across three Qwen-Image model variants under controlled experimental conditions. We evaluated the original `Qwen-Image base model`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` using standardized parameters to assess their respective computational efficiency and output quality.
+This report presents a comparative analysis of inference performance across three Qwen-Image model variants under controlled experimental conditions. We evaluated the original `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` using standardized parameters to assess their respective computational efficiency and output quality.
 
 
 ## Key Findings Summary
 
 - *Speed vs Quality Trade-off*: Lightning models achieve 12~25x faster inference with minimal quality loss for standard tasks
-- *Complex Text Rendering Hierarchy*: Base model > 8-step > 4-step for complex text accuracy
-- *Optimal Use Cases*: 4-step or 8-step for balanced performance, base model for maximum quality
+- *Complex Text Rendering Hierarchy*: Base model > 8-step >= 4-step for complex text accuracy
+- *Fine Detail Hair Preservation*: Base model > 8-step >= 4-step for complex text accuracy
 
 
 ## Experiment Setup
@@ -23,9 +23,9 @@ The experimental setup employed identical resolution settings and input conditio
 ## Results and Analysis
 
 ### 1. Standard Generation Tasks
-**Result**: All three models perform equally well for basic image generation on `Long number`, `Anime scene with signs`, `Classical Chinese couplets`, `Movie poster` and `PPT design` testa.
+**Result**: All three models perform equally well for basic image generation on `Long number`, `Anime scene with signs`, `Classical Chinese couplets`, `Movie poster` and `PPT design` tests.
 
-**Table 1** demonstrates that the `Qwen-Image` (NFE100) achieves satisfactory inference, while the distilled variants `Qwen-Image-Lightning-8step-V1.1` (NFE8) and `Qwen-Image-Lightning-4step-V1.0` (NFE4) maintain comparable performance at their respective optimized inference steps. Comprehensive assessment across diverse test scenarios indicates that all three model configurations deliver acceptable generation quality within their designated operational parameters.
+**Table 1** demonstrates that the `Qwen-Image` (NFE100) achieves satisfactory inference, while the distilled variants `Qwen-Image-Lightning-8step-V1.1` (NFE8) and `Qwen-Image-Lightning-4step-V1.0` (NFE4) maintain comparable performance. Comprehensive assessment across diverse test scenarios indicates that all three model configurations deliver acceptable generation quality within their designated operational parameters.
 
 **Table 1: Basic Image Generation**
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
@@ -45,16 +45,12 @@ The experimental setup employed identical resolution settings and input conditio
 ### 2. Text Rendering
 
 
-### Text Rendering Capabilities
+Statistical analysis reveals performance differentiation primarily manifests in `challenging test cases`, particularly those involving dense small text rendering. The `NFE4` exhibits elevated failure rates compared to `NFE8` and `NFE100` when processing complex textual elements within generated images. 
 
 
-Statistical analysis reveals performance differentiation primarily manifests in `challenging test cases`, particularly those involving dense small text rendering. The `NFE4` configuration exhibits elevated failure rates compared to `NFE8` and `NFE100` variants when processing complex textual elements within generated images. 
+**Table 2** presents a comparison of complex, dense text rendering among the three model. Results indicate that `NFE100` achieves the highest accuracy, whereas `NFE4` exhibits a greater frequency of typographical errors. In this example, NFE4 outputs the phrase "自动布局" twice and appends an extra "2".
 
-
-**Table 2** demonstrates that for `standard generation` tasks without intricate text requirements, no statistically significant performance disparities were observed across the three model configurations (Table 2). 
-
-#### **Table 2: Complex Text Rendering Performance - Text Accuracy Assessment**
-*This table evaluates the models' ability to render complex, dense text content accurately. The performance gap becomes more apparent when dealing with detailed textual information.*
+#### **Table 2: Complex Text Rendering Performance**
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|
@@ -64,27 +60,30 @@ Statistical analysis reveals performance differentiation primarily manifests in 
 ---
 
 
-### Detail Hair Preservation
-**Table 3** reveals that for scenes requiring fine hair detail representation, the `NFE100` model delivers superior results compared to its distilled models.
+### 3. Fine Detail Hair Preservation
 
-#### **Table 3: Detail Hair Preservation Analysis - Fine Detail Quality Comparison**
-*This table compares the models' performance in preserving fine details, particularly hair textures. The base model (NFE100) shows superior detail retention capabilities.*
+This section evaluates the capability of the three models to preserve fine hair details, aiming to identify the performance gap between `NFE100` and its distilled variants. We use a prompt featuring a capybara with textual elements to assess both texture fidelity and detail retention.
+
+**Table 3**  shows that `NFE100` consistently delivers superior fine hair detail preservation compared to its distilled counterparts (`NFE8` and `NFE4`), producing sharper and more natural hair textures while maintaining overall visual quality. 
+
+
+#### **Table 3: Detail Hair Preservation Analysis **
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|
-| A capybara wearing a suit holding a sign that reads Hello World. | ![311](https://github.com/user-attachments/assets/a252369b-9c48-424a-a559-368b412d70cb) | ![312](https://github.com/user-attachments/assets/32a628f0-b93d-46f9-9a7b-130a1c930a9fg) | ![313](https://github.com/user-attachments/assets/a80d8595-20cb-47ed-b322-8ae3a7626808) |
+| A capybara wearing a suit holding a sign that reads Hello World. | ![311](https://github.com/user-attachments/assets/a252369b-9c48-424a-a559-368b412d70cb) | ![312](https://github.com/user-attachments/assets/e0675f8d-d0c8-4d1e-8875-eb04827ac1db) | ![313](https://github.com/user-attachments/assets/a80d8595-20cb-47ed-b322-8ae3a7626808) |
 
 
 ---
 
-### Complex Scene Handling
-**Table 4** illustrates that in highly complex scenarios, all three models may encounter generation challenges, indicating that complexity itself can be a limiting factor regardless of the inference step configuration.
+### 4. Multi-Element Scene Complexity
 
 
+This section assesses the ability of the three models to handle highly complex scenes, using a neon-lit street scenario rich in visual and textual elements. The test includes numerous signs in both Chinese and English to evaluate performance in multi-element, detail-heavy environments.
 
-#### **Table 4: Complex Scene Generation Challenges - Multi-Element Scene Performance**
-*This table demonstrates how all three models handle highly complex scenes with multiple text elements. Complex scenarios can challenge all model variants regardless of inference steps.*
+**Table 4** illustrates that in highly complex scenarios, all three models may encounter generation challenges, indicating that complexity itself can be a limiting factor.
 
+#### **Table 4: Multi-Element Scene Complexity**
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|
@@ -93,13 +92,13 @@ Statistical analysis reveals performance differentiation primarily manifests in 
 
 ---
 
-### Model Performance Variability
-**Table 5** presents an interesting finding: despite `NFE100` having the lowest bad case ratio overall, the distilled models (`NFE8` and `NFE4`) can outperform the base model in some test scenarios.
+### 5. Model Performance Variability
 
+Analysis shows that while `NFE100` maintains the lowest overall bad case ratio, the distilled models (`NFE8` and `NFE4`) can outperform it in certain situations. For example, in the classroom prompt, `NFE100` produced a typo on the word "fundational," whereas both distilled models rendered the text correctly. This demonstrates that distillation does not uniformly reduce performance and may sometimes offer benefits in handling specific details. The results are presented in **Table 5**.
 
 
 #### **Table 5: Model Performance Variability**
-*This table reveals an interesting phenomenon where distilled models can sometimes outperform the base model in specific scenarios.*
+
 
 In certain test cases,  `NFE8` and `NFE4` performs better than `NFE100`.
 
@@ -111,12 +110,13 @@ In certain test cases,  `NFE8` and `NFE4` performs better than `NFE100`.
 
 ---
 
-### Resolution Sensitivity
-**Table 6** demonstrates that model performance can vary significantly when the same prompt is processed at different resolutions.
+### 6. Resolution Impact
+**Table 6** demonstrates that performance may vary with resolution changes. The results turns out that 
 
 
-#### **Table 6: Resolution Impact Analysis - Performance Variation Across Resolutions**
-*This table shows how changing resolution can significantly impact model performance. The same prompt may yield different results at different resolutions.*
+The results show that model performance can vary depending on resolution. In the `713×1280` case, `NFE100` struggles with accurately rendering a long numeric sequence, while both distilled models (`NFE8` and `NFE4`) handle it correctly. Conversely, at `1280×1280` resolution, `NFE100` and `NFE8` perform well, whereas `NFE4` fails to reproduce the sequence accurately. This demonstrates that resolution changes can improve or degrade performance depending on both base model and the distilled models. The visual results are demonstrated in **Table 6**.
+
+#### **Table 6: Resolution Impact Analysis**
 
 | Prompt | Resolution | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|---|
