@@ -6,11 +6,11 @@ This report presents a comparative analysis of inference performance across thre
 
 ## Key Findings Summary
 
-- *Speed vs Quality Trade-off*: Distilled models offer 12–25× faster inference with minimal quality loss on standard tasks.
-- *Complex Text Rendering Hierarchy*: Accuracy in complex text generation follows the hierarchy: Base model (NFE100) > 8-step (NFE8) ≥ 4-step (NFE4).
-- *Fine Detail Hair Preservation*: Base model outperforms distilled models in rendering fine hair textures, maintaining superior detail retention.
-- *Multi-Element Scene Complexity*: All models face challenges in generating highly complex, multi-element scenes.
-- *Variability in Performance*: Distilled models can outperform the base model in some scenarios; performance is also influenced by output resolution for both base and distilled models.
+- **Speed vs Quality Trade-off**: Distilled models offer 12–25× faster inference with minimal quality loss on standard tasks.
+- **Complex Text Rendering Hierarchy**: Accuracy in complex text generation follows the hierarchy: Base model (NFE100) > 8-step (NFE8) ≥ 4-step (NFE4).
+- **Fine Detail Hair Preservation**: Base model outperforms distilled models in rendering fine hair textures, maintaining superior detail retention.
+- **Multi-Element Scene Complexity**: All models face challenges in generating highly complex, multi-element scenes.
+- **Variability in Performance**: Distilled models can outperform the base model in some scenarios; performance is also influenced by output resolution for both base and distilled models.
 
 ## Experiment Setup
 
