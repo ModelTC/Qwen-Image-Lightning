@@ -15,6 +15,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Qwen-Image-Lightning-4steps-V1.0
 * [x] ComfyUI Workflow
 * [x] Improve Quality
+* [x] Performance Report
 
 ## 📑 Demo Images
 
