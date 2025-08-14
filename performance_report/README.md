@@ -6,10 +6,11 @@ This report presents a comparative analysis of inference performance across thre
 
 ## Key Findings Summary
 
-- *Speed vs Quality Trade-off*: Lightning models achieve 12~25x faster inference with minimal quality loss for standard tasks
-- *Complex Text Rendering Hierarchy*: Base model > 8-step >= 4-step for complex text accuracy
-- *Fine Detail Hair Preservation*: Base model > 8-step >= 4-step for complex text accuracy
-
+- *Speed vs Quality Trade-off*: Distilled models offer 12–25× faster inference with minimal quality loss on standard tasks.
+- *Complex Text Rendering Hierarchy*: Accuracy in complex text generation follows the hierarchy: Base model (NFE100) > 8-step (NFE8) ≥ 4-step (NFE4).
+- *Fine Detail Hair Preservation*: Base model outperforms distilled models in rendering fine hair textures, maintaining superior detail retention.
+- *Multi-Element Scene Complexity*: All models face challenges in generating highly complex, multi-element scenes.
+- *Variability in Performance*: Distilled models can outperform the base model in some scenarios; performance is also influenced by output resolution for both base and distilled models.
 
 ## Experiment Setup
 
@@ -67,7 +68,7 @@ This section evaluates the capability of the three models to preserve fine hair 
 **Table 3**  shows that `NFE100` consistently delivers superior fine hair detail preservation compared to its distilled counterparts (`NFE8` and `NFE4`), producing sharper and more natural hair textures while maintaining overall visual quality. 
 
 
-#### **Table 3: Detail Hair Preservation Analysis **
+#### **Table 3: Detail Hair Preservation Analysis**
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|
@@ -111,8 +112,6 @@ In certain test cases,  `NFE8` and `NFE4` performs better than `NFE100`.
 ---
 
 ### 6. Resolution Impact
-**Table 6** demonstrates that performance may vary with resolution changes. The results turns out that 
-
 
 The results show that model performance can vary depending on resolution. In the `713×1280` case, `NFE100` struggles with accurately rendering a long numeric sequence, while both distilled models (`NFE8` and `NFE4`) handle it correctly. Conversely, at `1280×1280` resolution, `NFE100` and `NFE8` perform well, whereas `NFE4` fails to reproduce the sequence accurately. This demonstrates that resolution changes can improve or degrade performance depending on both base model and the distilled models. The visual results are demonstrated in **Table 6**.
 
