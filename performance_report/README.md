@@ -1,20 +1,20 @@
 # Qwen-Image-Lightning Performance Report
 
 
-This report presents a comparative analysis of inference performance across three Qwen-Image model variants under controlled experimental conditions. We evaluated the original `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` using standardized parameters to assess their respective computational efficiency and output quality.
+This report presents a comparative analysis of inference performance across three Qwen-Image model models under controlled experimental conditions. We evaluated the original `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` using standardized parameters to assess their respective computational efficiency and output quality.
 
 
 ## Key Findings Summary
 
-- **Speed vs Quality Trade-off**: Distilled models offer 12–25× faster inference with minimal quality loss on standard tasks.
-- **Complex Text Rendering Hierarchy**: Accuracy in complex text generation follows the hierarchy: Base model (NFE100) > 8-step (NFE8) ≥ 4-step (NFE4).
+- **Speed vs Quality Trade-off**: Distilled models offer 12 to 25× faster inference with minimal quality loss on standard tasks.
+- **Complex Text Rendering Hierarchy**: Accuracy in complex text generation follows the hierarchy: Base model (NFE100) > 8-step (NFE8) ≥ 4-step (NFE4). NFE represents the number of function evaluations.
 - **Fine Detail Hair Preservation**: Base model outperforms distilled models in rendering fine hair textures, maintaining superior detail retention.
 - **Multi-Element Scene Complexity**: All models face challenges in generating highly complex, multi-element scenes.
 - **Variability in Performance**: Distilled models can outperform the base model in some scenarios; performance is also influenced by output resolution for both base and distilled models.
 
 ## Experiment Setup
 
-The experimental setup employed identical resolution settings and input conditions across all model variants to ensure fair comparison. A fixed random seed (seed=42) was implemented to maintain reproducibility and eliminate stochastic variations. Three distinct inference configurations were tested: 
+The experimental setup employed identical resolution settings and input conditions across all model models to ensure fair comparison. A fixed random seed (seed=42) was implemented to maintain reproducibility and eliminate stochastic variations. Three distinct inference configurations were tested: 
 
 - `Qwen-Image`, the base model with 50 inference steps at CFG=4 (NFE100), 
 - `Qwen-Image-Lightning-8step-V1.1` with 8 steps at CFG=1 (NFE8), 
@@ -24,9 +24,9 @@ The experimental setup employed identical resolution settings and input conditio
 ## Results and Analysis
 
 ### 1. Standard Generation Tasks
-All three models perform equally well for basic image generation on `Long number`, `Anime scene with signs`, `Classical Chinese couplets`, `Movie poster` and `PPT design` tests.
+All three models perform comparable performance for basic image generation on `Long number`, `Anime scene with signs`, `Classical Chinese couplets`, `Movie poster` and `PPT design` tests.
 
-**Table 1** demonstrates that the `Qwen-Image` (NFE100) achieves satisfactory inference, while the distilled variants `Qwen-Image-Lightning-8step-V1.1` (NFE8) and `Qwen-Image-Lightning-4step-V1.0` (NFE4) maintain comparable performance. Comprehensive assessment across diverse test scenarios indicates that all three model configurations deliver acceptable generation quality within their designated operational parameters.
+**Table 1** demonstrates that the `Qwen-Image` (NFE100) achieves satisfactory inference, while the distilled models `Qwen-Image-Lightning-8step-V1.1` (NFE8) and `Qwen-Image-Lightning-4step-V1.0` (NFE4) maintain comparable performance. Comprehensive assessment across diverse test scenarios indicates that all three model configurations deliver acceptable generation quality within their designated operational parameters.
 
 **Table 1: Basic Image Generation**
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
@@ -46,7 +46,7 @@ All three models perform equally well for basic image generation on `Long number
 ### 2. Text Rendering
 
 
-Statistical analysis reveals performance differentiation primarily manifests in `challenging test cases`, particularly those involving dense small text rendering. The `NFE4` exhibits elevated failure rates compared to `NFE8` and `NFE100` when processing complex textual elements within generated images. 
+Performance differences primarily appear in challenging test cases in `challenging test cases`, particularly those involving dense small text rendering. The `NFE4` exhibits elevated failure rates compared to `NFE8` and `NFE100` when processing complex textual elements within generated images. 
 
 
 **Table 2** presents a comparison of complex, dense text rendering among the three model. Results indicate that `NFE100` achieves the highest accuracy, whereas `NFE4` exhibits a greater frequency of typographical errors. In this example, NFE4 outputs the phrase "自动布局" twice and appends an extra "2".
@@ -63,7 +63,7 @@ Statistical analysis reveals performance differentiation primarily manifests in 
 
 ### 3. Fine Detail Hair Preservation
 
-This section evaluates the capability of the three models to preserve fine hair details, aiming to identify the performance gap between `NFE100` and its distilled variants. We use a prompt featuring a capybara with textual elements to assess both texture fidelity and detail retention.
+This section evaluates the capability of the three models to preserve fine hair details, aiming to identify the performance gap between `NFE100` and its distilled models. We use a prompt featuring a capybara with textual elements to assess both texture fidelity and detail retention.
 
 **Table 3**  shows that `NFE100` consistently delivers superior fine hair detail preservation compared to its distilled counterparts (`NFE8` and `NFE4`), producing sharper and more natural hair textures while maintaining overall visual quality. 
 
@@ -82,7 +82,7 @@ This section evaluates the capability of the three models to preserve fine hair 
 
 This section assesses the ability of the three models to handle highly complex scenes, using a neon-lit street scenario rich in visual and textual elements. The test includes numerous signs in both Chinese and English to evaluate performance in multi-element, detail-heavy environments.
 
-**Table 4** illustrates that in highly complex scenarios, all three models may encounter generation challenges, indicating that complexity itself can be a limiting factor.
+**Table 4** illustrates that in highly complex scenarios, all three models exhibit generation challenges, indicating that complexity itself can be a limiting factor.
 
 #### **Table 4: Multi-Element Scene Complexity**
 
