@@ -20,6 +20,8 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 To assess the distilled models' performance characteristics, including their **strengths and constraints**, please refer to the [performance report](./performance_report/README.md).
 
+![performance report](./performance_report/README.md).
+
 
 ## 🚀 Run Evaluation and Test
 
