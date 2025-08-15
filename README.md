@@ -18,11 +18,11 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 📑 Performance Report
 
-To assess the distilled models' performance characteristics, including their **strengths and limitations**, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
+To assess the distilled models' performance characteristics, including their **strengths and limitations**, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8steps-V1.1`, and `Qwen-Image-Lightning-4steps-V1.0`, in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
 
 ### - **Quality and Speed**
 
-Compared to the base model, the distilled models (8-step and 4-step) deliver a 12–25× speed improvement with no significant loss in performance for most cases.
+Compared to the base model, the distilled models (8-step and 4-step) deliver a 12–25× speed improvement with no significant loss in performance in most cases.
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|
@@ -47,7 +47,7 @@ In scenarios involving dense or small text, the base model is more likely to pro
 
 ### - **Hair-like Details**
 
-In scenes containing hair-like details, the base model demonstrates superior rendering fidelity, whereas the distilled models may yield outputs that appear either perceptibly blurred or excessively sharpened.
+In scenes containing hair-like details, the base model demonstrates superior rendering fidelity, whereas the distilled models may yield outputs that appear either noticeably blurred or excessively sharpened.
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|
@@ -70,7 +70,7 @@ In highly complex scenes, all three models may fail to produce satisfactory resu
 
 ### - **Inconsistencies in Model Rankings Across Test Cases**
 
-Test results may vary across different cases; in certain test instances, the base model may perform better, whereas in others, the distilled models may achieve superior results. Even for the same prompt at different resolutions, the relative performance ranking of the models may differ substantially.
+Test results may vary across different cases. In certain test instances, the base model may perform better, whereas in others, the distilled models may achieve superior results. Even for the same prompt at different resolutions, the relative performance ranking of the models may differ substantially.
 
 
 | Prompt | Base NFE=100 | 8steps-V1.1 NFE=8 | 4steps-V1.0 NFE=4 |
