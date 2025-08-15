@@ -22,6 +22,16 @@ To assess the distilled models' performance characteristics, including their **s
 
 ![performance report](./performance_report/README.md).
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<div id="markdown-content"></div>
+<script>
+  fetch('./performance_report/README.md')
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('markdown-content').innerHTML = marked(text);
+    });
+</script>
+
 
 ## 🚀 Run Evaluation and Test
 
