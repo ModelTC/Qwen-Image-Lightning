@@ -18,7 +18,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 📑 Performance Report
 
-To assess the distilled models' performance characteristics, including their **strengths and limitations**, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` in different scenarios.
+To assess the distilled models' performance characteristics, including their **strengths and limitations**, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
 
 ### - **Quality and Speed**
 
