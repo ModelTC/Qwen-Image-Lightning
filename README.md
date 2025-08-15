@@ -17,24 +17,10 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Improve Quality
 * [x] Performance Report
 
-## 📑 Demo Images
+## 📑 Performance Report
 
-<div data-markdown="performance_report/README.md"></div>
+To assess the distilled models' performance characteristics, including their **strengths and constraints**, please refer to the [performance report](./performance_report/README.md).
 
-The prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image). Generated with seed 42, you can reproduce the results with [examples/prompt_list.txt](examples/prompt_list.txt).
-
-| Prompt         | Base NFE=100               | Qwen-Image-Lightning-8steps-V1.0 NFE=8|
-|-----------------|----------------------------|----------------------------|
-| A coffee shop entrance features a chalkboard sign reading "Qwen Coffee 😊 $2 per cup," with a neon light beside it displaying "通义千问". Next to it hangs a poster showing a beautiful Chinese woman, and beneath the poster is written "π≈3.1415926-53589793-23846264-33832795-02384197".   | ![demo1](https://github.com/user-attachments/assets/0d0a4185-dc55-4dbb-b9ea-106c7db8fac8)   | ![demo1](https://github.com/user-attachments/assets/ab67d165-7c2c-47fa-b9da-f541119ffb88)   |
-| 一幅精致细腻的工笔画，画面中心是一株蓬勃生长的红色牡丹，花朵繁茂，既有盛开的硕大花瓣，也有含苞待放的花蕾，层次丰富，色彩艳丽而不失典雅。牡丹枝叶舒展，叶片浓绿饱满，脉络清晰可见，与红花相映成趣。一只蓝紫色蝴蝶仿佛被画中花朵吸引，停驻在画面中央的一朵盛开牡丹上，流连忘返，蝶翼轻展，细节逼真，仿佛随时会随风飞舞。整幅画作笔触工整严谨，色彩浓郁鲜明，展现出中国传统工笔画的精妙与神韵，画面充满生机与灵动之感。  | ![demo2](https://github.com/user-attachments/assets/60b46667-bfe8-40d7-b5ea-16ea2942af3e)   | ![demo2](https://github.com/user-attachments/assets/57585e4e-dd95-4bfb-8040-6462d2e1fdf5)   |
-| *A young girl wearing school uniform stands in a classroom, writing on a chalkboard. The text "Introducing Qwen-Image, a foundational image generation model that excels in complex text rendering and precise image editing" appears in neat white chalk at the center of the blackboard. Soft natural light filters through windows, casting gentle shadows. The scene is rendered in a realistic photography style with fine details, shallow depth of field, and warm tones. The girl's focused expression and chalk dust in the air add dynamism. Background elements include desks and educational posters, subtly blurred to emphasize the central action. Ultra-detailed 32K resolution, DSLR-quality, soft bokeh effect, documentary-style composition  | ![demo3](https://github.com/user-attachments/assets/0524e6f0-2d93-4898-aba4-6a07a7e439d5)   | ![demo3](https://github.com/user-attachments/assets/3d9ddabd-ab16-405e-88be-c358460bc769)   |
-| A coffee shop entrance features a chalkboard sign reading "Qwen Coffee 😊 $2 per cup," with a neon light beside it displaying "通义千问". Next to it hangs a poster showing a beautiful Chinese woman, and beneath the poster is written "π≈3.1415926-53589793-23846264-33832795-02384197".   | ![badcase1](https://github.com/user-attachments/assets/7ec02505-d6e2-4397-93a0-fa3afb496c98)   | ![badcase1](https://github.com/user-attachments/assets/a2f519b9-132c-458b-bf39-dac86be2fe10)   |
-
-The last row shows a badcase of the distilled model.
-
-## 📑 Limitation
-
-Neither the distilled models nor the Qwen-Image base model can consistently generate perfect results. We observed that the same model exhibits varying performance for the same prompt under different resolutions. A specific test case might favor one model, while other cases might yield completely opposite results. We sampled a collection of prompts [examples/prompt_list.txt](examples/prompt_list.txt), and you can compare the performance of the distilled models and the base model by running the following scripts.
 
 ## 🚀 Run Evaluation and Test
 

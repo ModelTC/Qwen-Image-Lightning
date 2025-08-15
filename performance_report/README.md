@@ -1,6 +1,6 @@
 # Qwen-Image-Lightning Performance Report
 
-To provide users with a clear understanding of the capability and limitation the models, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` in different scenarios.
+To provide users with a clear understanding of the capabilities and limitations, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` in different scenarios.
 
 ---
 
