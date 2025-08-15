@@ -1,8 +1,6 @@
 # Qwen-Image-Lightning Performance Report
 
-<!-- This report presents a comparative analysis of inference performance across three Qwen-Image model models under controlled experimental conditions. We evaluated the original `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` using standardized parameters to assess their respective computational efficiency and output quality. -->
-
-This report compares the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` to provide users with a clear understanding of their capability boundaries.
+To provide users with a clear understanding of the capability and limitation the models, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8step-V1.1`, and `Qwen-Image-Lightning-4step-V1.0` in different scenarios.
 
 ---
 
