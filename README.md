@@ -3,6 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
+* Aug 23, 2025: 👋 Release [Qwen-Image-Edit-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0-bf16.safetensors).
 * Aug 12, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V1.1](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.1.safetensors).
 * Aug 12, 2025: 👋 Upload the bf16 version of the 8-step model [Qwen-Image-Lightning-8steps-V1.1-bf16](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.1-bf16.safetensors) and 4-step model [Qwen-Image-Lightning-4steps-V1.0-bf16](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V1.0-bf16.safetensors).
 * Aug 11, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V1.0.safetensors).
@@ -15,6 +16,10 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Qwen-Image-Lightning-4steps-V1.0
 * [x] ComfyUI Workflow
 * [x] Improve Quality
+* [x] Qwen-Image-Edit-Lightning-8steps-V1.0
+* [ ] Qwen Edit ComfyUI Workflow
+* [ ] Qwen-Image-Edit-Lightning-4steps-V1.0
+
 
 ## 📑 Performance Report
 
@@ -131,6 +136,44 @@ python generate_with_diffusers.py \
 --base_seed 42 --steps 50 --cfg 4.0
 ```
 
+### Run 8-step Edit Model
+
+``` sh
+# 8 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_prompt_list.txt \
+--image_path_list_file examples/image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit \
+--out_dir test_lora_8_step_edit_results \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors \
+--base_seed 42 --steps 8 --cfg 1.0
+```
+
+### Run 4-step Edit Model
+
+``` sh
+# 8 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_prompt_list.txt \
+--image_path_list_file examples/image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit \
+--out_dir test_lora_4_step_edit_results \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors \
+--base_seed 42 --steps 8 --cfg 1.0
+```
+
+### Run Base Edit Model
+
+``` sh
+# 50 steps, cfg 4.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_prompt_list.txt \
+--image_path_list_file examples/image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit \
+--out_dir test_base_edit_results \
+--base_seed 42 --steps 50 --cfg 4.0
+```
+
 ## 🎨 ComfyUI Workflow
 
 ComfyUI workflow is available in the `workflows/` directory. The workflow is based on the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and has been verified with ComfyUI repository at commit ID `37d620a6b85f61b824363ed8170db373726ca45a`.
@@ -163,6 +206,8 @@ The models in this repository are licensed under the Apache 2.0 License. We clai
 We built upon and reused code from the following projects: [Qwen-Image](https://github.com/QwenLM/Qwen-Image), licensed under the Apache License 2.0.
 
 The evaluation text prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image).
+
+The test cases for Image Edit are from [Qwen-Image-Edit-api](https://www.alibabacloud.com/help/en/model-studio/qwen-image-edit-api) and [reddit](https://www.reddit.com/r/comfyui/comments/1mue7k0/testing_the_new_qwen_image_editing_q4_gguf_and_4/).
 
 ## Star History
 

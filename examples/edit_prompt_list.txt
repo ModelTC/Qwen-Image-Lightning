@@ -1,0 +1,8 @@
+Change the person to a standing position, bending over to hold the dog's front paws.
+Replace the words 'HEALTH INSURANCE' on the letter blocks with 'Tomorrow will be better'.
+Replace the words 'HEALTH INSURANCE' on the letter blocks with '明天会更好'.
+Replace the polka-dot shirt with a light blue shirt.
+Change the background to Antarctica.
+Generate a cartoon profile picture of the person.
+Remove the hair from the plate.
+将图中的人物改为日漫风格，并给图片添加文字“使用Lightx2V Qwen-Image-Lightning 加速图像生成和图片编辑”。

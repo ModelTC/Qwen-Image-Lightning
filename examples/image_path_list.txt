@@ -1,0 +1,8 @@
+./examples/qwen_image_edit/qwen_edit1.webp
+./examples/qwen_image_edit/qwen_edit2.webp
+./examples/qwen_image_edit/qwen_edit2.webp
+./examples/qwen_image_edit/qwen_edit3.png
+./examples/qwen_image_edit/qwen_edit4.png
+./examples/qwen_image_edit/qwen_edit5.png
+./examples/qwen_image_edit/qwen_edit6.webp
+./examples/qwen_image_edit/qwen_edit7.webp
