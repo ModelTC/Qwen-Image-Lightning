@@ -152,14 +152,14 @@ python generate_with_diffusers.py \
 ### Run 4-step Edit Model
 
 ``` sh
-# 8 steps, cfg 1.0
+# 4 steps, cfg 1.0
 python generate_with_diffusers.py \
 --prompt_list_file examples/edit_prompt_list.txt \
 --image_path_list_file examples/image_path_list.txt \
 --model_name Qwen/Qwen-Image-Edit \
 --out_dir test_lora_4_step_edit_results \
 --lora_path Qwen-Image-Lightning/Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors \
---base_seed 42 --steps 8 --cfg 1.0
+--base_seed 42 --steps 4 --cfg 1.0
 ```
 
 ### Run Base Edit Model
