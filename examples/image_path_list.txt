@@ -6,3 +6,5 @@
 ./examples/qwen_image_edit/qwen_edit5.png
 ./examples/qwen_image_edit/qwen_edit6.webp
 ./examples/qwen_image_edit/qwen_edit7.webp
+./examples/qwen_image_edit/qwen_edit7.webp
+./examples/qwen_image_edit/qwen_edit8.png

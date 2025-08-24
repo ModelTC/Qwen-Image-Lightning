@@ -87,7 +87,6 @@ def main(
             model_name, subfolder="transformer", torch_dtype=torch_dtype
         )
         assert os.path.exists(lora_path), f"Lora path {lora_path} does not exist"
-        model = load_and_merge_lora_weight_from_safetensors(model, lora_path)
         scheduler_config = {
             "base_image_seq_len": 256,
             "base_shift": math.log(3),  # We use shift=3 in distillation
@@ -108,9 +107,9 @@ def main(
         pipe = pipe_cls.from_pretrained(
             model_name, transformer=model, scheduler=scheduler, torch_dtype=torch_dtype
         )
+        pipe.load_lora_weights(lora_path)
     else:
         pipe = pipe_cls.from_pretrained(model_name, torch_dtype=torch_dtype)
-
     pipe = pipe.to(device)
 
     positive_magic = {

@@ -3,6 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
+* Aug 24, 2025: 👋 Release [Qwen-Image-Edit-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0-bf16.safetensors).
 * Aug 23, 2025: 👋 Release [Qwen-Image-Edit-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0-bf16.safetensors).
 * Aug 12, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V1.1](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.1.safetensors).
 * Aug 12, 2025: 👋 Upload the bf16 version of the 8-step model [Qwen-Image-Lightning-8steps-V1.1-bf16](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.1-bf16.safetensors) and 4-step model [Qwen-Image-Lightning-4steps-V1.0-bf16](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V1.0-bf16.safetensors).
@@ -17,8 +18,8 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] ComfyUI Workflow
 * [x] Improve Quality
 * [x] Qwen-Image-Edit-Lightning-8steps-V1.0
+* [x] Qwen-Image-Edit-Lightning-4steps-V1.0
 * [ ] Qwen Edit ComfyUI Workflow
-* [ ] Qwen-Image-Edit-Lightning-4steps-V1.0
 
 
 ## 📑 Performance Report
