@@ -94,7 +94,7 @@ Test results may vary across different cases. In certain test instances, the bas
 To assess the distilled-edit models' performance characteristics, we compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers`, `Qwen-Image-Edit-Lightning-8steps-V1.0`, and `Qwen-Image-Edit-Lightning-4steps-V1.0`, in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
 
 
-| Input Image | Prompt | Base NFE=100 | 8steps-V1.0 NFE=8 | 4steps-V1.0 NFE=4 |
+| Input Image | Prompt | Base Edit NFE=100 | 8steps-V1.0 NFE=8 | 4steps-V1.0 NFE=4 |
 |---|---|---|---|---|
 | ![111](https://github.com/user-attachments/assets/94079f67-835c-441c-bd9e-ec36ce4fa251)  | Replace the words 'HEALTH INSURANCE' on the letter blocks with 'Tomorrow will be better'. | ![112](https://github.com/user-attachments/assets/01a8a7ca-ca6c-440b-8732-f8ffbb66ffc6) | ![113](https://github.com/user-attachments/assets/430702c6-c54d-4788-80ab-aae2e457a086) | ![114](https://github.com/user-attachments/assets/e42c07b7-5d1c-4c57-bb1e-912b59b870a7) |
 |   |  |  | | Bad case: the letter o is missing.|
