@@ -110,10 +110,6 @@ def main(
         pipe.load_lora_weights(lora_path)
     else:
         pipe = pipe_cls.from_pretrained(model_name, torch_dtype=torch_dtype)
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     pipe = pipe.to(device)
 
     positive_magic = {
