@@ -22,9 +22,9 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [ ] Qwen Edit ComfyUI Workflow
 
 
-## 📑 Performance Report
+## 📑 T2I Performance Report
 
-To assess the distilled models' performance characteristics, including their **strengths and limitations**, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8steps-V1.1`, and `Qwen-Image-Lightning-4steps-V1.0`, in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
+To assess the distilled-t2v models' performance characteristics, including their **strengths and limitations**, we compare the performance of the three models, i.e., `Qwen-Image`, `Qwen-Image-Lightning-8steps-V1.1`, and `Qwen-Image-Lightning-4steps-V1.0`, in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
 
 ### - **Quality and Speed**
 
@@ -88,6 +88,25 @@ Test results may vary across different cases. In certain test instances, the bas
 | A coffee shop entrance features a chalkboard sign reading "Qwen Coffee 😊 $2 per cup," with a neon light beside it displaying "通义千问". Next to it hangs a poster showing a beautiful Chinese woman, and beneath the poster is written "π≈3.1415926-53589793-23846264-33832795-02384197". | ![621](https://github.com/user-attachments/assets/a58c62a1-e079-42d3-a418-9e4ff6e738fb) | ![622](https://github.com/user-attachments/assets/ed36ebea-0535-43b4-82db-b55b1fc0f22e) | ![623](https://github.com/user-attachments/assets/f411310f-19a0-4477-8af0-ed536835f0a2) |
 | | ✅ | ✅ | ❌ |
 
+
+## 📑 Edit Performance Report
+
+To assess the distilled-edit models' performance characteristics, we compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers`, `Qwen-Image-Edit-Lightning-8steps-V1.0`, and `Qwen-Image-Edit-Lightning-4steps-V1.0`, in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
+
+
+| Input Image | Prompt | Base NFE=100 | 8steps-V1.0 NFE=8 | 4steps-V1.0 NFE=4 |
+|---|---|---|---|---|
+| ![111](https://github.com/user-attachments/assets/94079f67-835c-441c-bd9e-ec36ce4fa251)  | Replace the words 'HEALTH INSURANCE' on the letter blocks with 'Tomorrow will be better'. | ![112](https://github.com/user-attachments/assets/01a8a7ca-ca6c-440b-8732-f8ffbb66ffc6) | ![113](https://github.com/user-attachments/assets/430702c6-c54d-4788-80ab-aae2e457a086) | ![114](https://github.com/user-attachments/assets/e42c07b7-5d1c-4c57-bb1e-912b59b870a7) |
+|   |  |  | | Bad case: the letter o is missing.|
+| ![121](https://github.com/user-attachments/assets/5c7a29a7-b590-44b5-82fb-23cf90396ef2)  | Replace the words 'HEALTH INSURANCE' on the letter blocks with '明天会更好'. | ![122](https://github.com/user-attachments/assets/d9bb1218-849a-465b-a521-6e653bd87667) | ![123](https://github.com/user-attachments/assets/fb7192bc-7b5d-4743-9257-2c4206358e7c) | ![124](https://github.com/user-attachments/assets/046b5f79-3075-4f78-b22f-27c189ab15ab) |
+|   |  |  | Bad case: An extra “更” was generated.| |
+| ![131](https://github.com/user-attachments/assets/a8e8916f-a4c8-47d0-a938-3fe07716da5b)  | Replace the polka-dot shirt with a light blue shirt. | ![132](https://github.com/user-attachments/assets/da738b8a-220e-4a7c-b5d7-dc02f2adabc9) | ![133](https://github.com/user-attachments/assets/2cce11ab-9a0a-4893-a9ce-50022d5cfcd3) | ![134](https://github.com/user-attachments/assets/f66d3ec3-f957-4896-9859-0b486f1f30f6) |
+| ![141](examples\qwen_image_edit\qwen_edit6.webp)  | Remove the hair from the plate. | ![142](https://github.com/user-attachments/assets/68d98b71-a11d-4dff-b9b8-eaa063a3e115) | ![143](https://github.com/user-attachments/assets/78aab90c-6ba6-464f-a478-a5eb54038813) | ![144](https://github.com/user-attachments/assets/90264ad7-49db-434f-bda8-c7aa9c3887be) |
+| ![151](https://github.com/user-attachments/assets/e9523145-5be7-4204-9cb9-35bf3e373084)  | Generate a cartoon profile picture of the person. | ![152](https://github.com/user-attachments/assets/1c3bd38e-fe4f-4ecb-8e3c-d342c80bbbfb) | ![153](https://github.com/user-attachments/assets/6b0ee9de-59fa-465c-a4b9-04f271cdeacb) | ![154](https://github.com/user-attachments/assets/4c3dc692-5f67-4b0f-8873-a382d9873598) |
+| ![161](https://github.com/user-attachments/assets/025a73ba-5bcf-4bf3-9876-b146db679da6)  | Transform the character in the image into an anime style, and add the text: 'Accelerate image generation and editing with Lightx2V Qwen-Image-Lightning. | ![162](https://github.com/user-attachments/assets/4385dcba-1818-4acf-b804-f9a97d997550) | ![163](https://github.com/user-attachments/assets/b767b0c1-4e78-45c5-a665-696ec80f71b8) | ![164](https://github.com/user-attachments/assets/92675026-3a13-4f02-bd51-3dafaac4ff1d) |
+|   |  |  | Bad case: the letter t is missing. | Failure case. |
+| ![171](https://github.com/user-attachments/assets/9c8a5f27-d23c-431c-a57e-9d2aa3ba83e0)  | 将图中的人物改为日漫风格，并给图片添加文字“使用Lightx2V Qwen-Image-Lightning 加速图像生成和图片编辑”。 | ![172](https://github.com/user-attachments/assets/f256e198-40f6-4f38-a0e9-e57a4cb6b3d5) | ![173](https://github.com/user-attachments/assets/10623274-4b69-4bd8-87e3-7f72a818d676) | ![174](https://github.com/user-attachments/assets/43dbce1e-7726-42e0-8125-bf0d77debb58) |
+| ![181](https://github.com/user-attachments/assets/ee2cc286-445c-49f5-8910-8656ca478a13)  | 将图中红色框中的文字改为"殇",只改变框内的画面，框外的画面维持不变。 | ![182](https://github.com/user-attachments/assets/9267dda5-c788-4cd4-9811-448b06a4e2e9) | ![183](https://github.com/user-attachments/assets/4b7df2b5-c867-4d27-8aab-49b15b71c82d) | ![184](https://github.com/user-attachments/assets/948841a5-4653-4ce0-b246-94b305c04ab5) |
 
 
 ## 🚀 Run Evaluation and Test
