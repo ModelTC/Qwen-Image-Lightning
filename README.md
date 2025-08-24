@@ -89,7 +89,7 @@ Test results may vary across different cases. In certain test instances, the bas
 | | ✅ | ✅ | ❌ |
 
 
-## 📑 Editting Performance Report
+## 📑 Editing Performance Report
 
 We compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers`, `Qwen-Image-Edit-Lightning-8steps-V1.0`, and `Qwen-Image-Edit-Lightning-4steps-V1.0`, in different scenarios. The results can be reproduced following [the section below](#-run-evaluation-and-test).
 
