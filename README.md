@@ -94,7 +94,7 @@ Test results may vary across different cases. In certain test instances, the bas
 
 ### Installation
 
-Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment** and download the **Base Model**.
+Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
 
 ### Model Download
 
