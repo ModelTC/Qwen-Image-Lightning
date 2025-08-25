@@ -5,6 +5,6 @@ Replace the polka-dot shirt with a light blue shirt.
 Change the background to Antarctica.
 Generate a cartoon profile picture of the person.
 Remove the hair from the plate.
-Transform the character in the image into an anime style, and add the text: 'Accelerate image generation and editing with Lightx2V Qwen-Image-Lightning.
+Transform the character in the image into an anime style, and add the text: "Accelerate image generation and editing with Lightx2V Qwen-Image-Lightning".
 将图中的人物改为日漫风格，并给图片添加文字“使用Lightx2V Qwen-Image-Lightning 加速图像生成和图片编辑”。
 将图中红色框中的文字改为"殇",只改变框内的画面，框外的画面维持不变。
