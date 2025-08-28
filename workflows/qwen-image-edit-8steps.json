@@ -787,7 +787,7 @@
         }
       },
       "widgets_values": [
-        "Qwen-Image-Edit-Lightning-8steps-V1.0-bf16.safetensors",
+        "Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors",
         1
       ]
     }
