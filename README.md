@@ -215,23 +215,13 @@ ComfyUI workflow is available in the `workflows/` directory.
 
 1. Install ComfyUI following the [official instructions](https://github.com/comfyanonymous/ComfyUI)
 2. Download and place the Qwen-Image or Qwen-Image-Edit base model following the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image), [Qwen-Image-Edit ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit) (include UNet/CLIP/VAE files into proper ComfyUI folders)
-3. For 8-step qwen image workflow:
-   * Load `workflows/qwen-image-8steps.json`
-   * Put `Qwen-Image-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`
-   * Ensure `KSampler` steps = 8
-4. For 4-step qwen image workflow:
-   * Load `workflows/qwen-image-4steps.json`
-   * Put `Qwen-Image-Lightning-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`
-   * Ensure `KSampler` steps = 4
-5. For 8-step qwen image edit workflow:
-   * Load `workflows/qwen-image-edit-8steps.json`
-   * Put `Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`
-   * Ensure `KSampler` steps = 8
-6. For 4-step qwen image edit workflow:
-   * Load `workflows/qwen-image-edit-4steps.json`
-   * Put `Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`
-   * Ensure `KSampler` steps = 4
-7. Run the workflow to generate images
+3. For **Qwen Image** workflows:
+   - **8-step**: Load `workflows/qwen-image-8steps.json`, put `Qwen-Image-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
+   - **4-step**: Load `workflows/qwen-image-4steps.json`, put `Qwen-Image-Lightning-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
+4. For **Qwen Image Edit** workflows:
+   - **8-step**: Load `workflows/qwen-image-edit-8steps.json`, put `Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
+   - **4-step**: Load `workflows/qwen-image-edit-4steps.json`, put `Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
+5. Run the workflow to generate images
 
 ## License Agreement
 
