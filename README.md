@@ -214,7 +214,7 @@ ComfyUI workflow is available in the `workflows/` directory.
 ### Usage
 
 1. Install ComfyUI following the [official instructions](https://github.com/comfyanonymous/ComfyUI)
-2. Download and place the Qwen-Image base model following the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) (include UNet/CLIP/VAE files into proper ComfyUI folders)
+2. Download and place the Qwen-Image or Qwen-Image-Edit base model following the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image), [Qwen-Image-Edit ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit) (include UNet/CLIP/VAE files into proper ComfyUI folders)
 3. For 8-step qwen image workflow:
    * Load `workflows/qwen-image-8steps.json`
    * Put `Qwen-Image-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`
