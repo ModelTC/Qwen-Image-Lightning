@@ -199,9 +199,9 @@ python generate_with_diffusers.py \
 
 ComfyUI workflow is available in the `workflows/` directory. 
 
-- The Qwen-Image workflow is based on the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and has been verified with ComfyUI repository at commit ID `37d620a6b85f61b824363ed8170db373726ca45a`. The 
+- The Qwen-Image workflow is based on the [Qwen-Image ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and has been verified with ComfyUI repository at commit ID `37d620a6b85f61b824363ed8170db373726ca45a`. 
 
-- Qwen-Image-Edit workflow is based on the [Qwen-Image-Edit ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit). We noticed a gap in performance compared to diffusers inference, which may stem from differences in how ComfyUI and diffusers handle the processing.
+- The Qwen-Image-Edit workflow is based on the [Qwen-Image-Edit ComfyUI tutorial](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit). We noticed a gap in performance compared to diffusers inference, which may stem from differences in how ComfyUI and diffusers handle the processing.
 
 
 ### Workflow Files
