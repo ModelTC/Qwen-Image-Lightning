@@ -13,11 +13,9 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 📑 Community Support
 
-[Diffusers](https://github.com/huggingface/diffusers) now supports loading Qwen-Image-Lightning within the Qwen-Image pipeline. Please check [their documentation](https://huggingface.co/docs/diffusers/main/api/pipelines/qwenimage) for details.
-
-[ComfyUI](https://github.com/comfyanonymous/ComfyUI) provides native workflows for [Qwen-Image](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and [Qwen-Image-Edit](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit), including Lightning LoRA weights.
-
-[Nunchaku](https://github.com/nunchaku-tech/nunchaku) has released 4-bit [Qwen-Image lightning](https://huggingface.co/nunchaku-tech/nunchaku-qwen-image). Try their [example script](https://github.com/nunchaku-tech/nunchaku/blob/main/examples/v1/qwen-image-lightning.py) to reduce inference GPU memory usage.
+* [Diffusers](https://github.com/huggingface/diffusers) now supports loading Qwen-Image-Lightning within the Qwen-Image pipeline. Please check [their documentation](https://huggingface.co/docs/diffusers/main/api/pipelines/qwenimage) for details.
+* [ComfyUI](https://github.com/comfyanonymous/ComfyUI) provides native workflows for [Qwen-Image](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and [Qwen-Image-Edit](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit), including Lightning LoRA weights.
+* [Nunchaku](https://github.com/nunchaku-tech/nunchaku) has released 4-bit [Qwen-Image lightning](https://huggingface.co/nunchaku-tech/nunchaku-qwen-image). Try their [example script](https://github.com/nunchaku-tech/nunchaku/blob/main/examples/v1/qwen-image-lightning.py) to reduce inference GPU memory usage.
 
 ## 📑 Todo List
 
