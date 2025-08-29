@@ -11,6 +11,16 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * Aug 11, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V1.0.safetensors).
 * Aug 08, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V1.0.safetensors).
 
+## 📑 Community Support
+
+[Diffusers](https://github.com/huggingface/diffusers) offers support for loading Qwen-Image-Lightning into Qwen-Image pipeline. Please check [their document](https://huggingface.co/docs/diffusers/main/api/pipelines/qwenimage) for more information.
+
+[ComfyUI](https://github.com/comfyanonymous/ComfyUI) provides native workflows for [Qwen-Image-T2I](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and [Qwen-Image-Edit](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit) with lightning lora weights.
+
+[Nunchaku](https://github.com/nunchaku-tech/nunchaku) has released the 4-bit [Qwen-Image lightning loras](https://huggingface.co/nunchaku-tech/nunchaku-qwen-image). Please try their [example script](https://github.com/nunchaku-tech/nunchaku/blob/main/examples/v1/qwen-image-lightning.py) to reduce the memory cost of inference.
+
+
+
 ## 📑 Todo List
 
 * [x] Qwen-Image-Lightning-8steps-V1.1
