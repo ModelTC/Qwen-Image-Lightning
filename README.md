@@ -3,7 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
-* Sep 10, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V2.0.safetensors). Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. Please see [the comparison](#-v10-v20-comparison).
+* Sep 10, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V2.0.safetensors). Please see [the comparison](#-v10-v20-comparison).
 * Aug 28, 2025: 👋 Release workflows for `Qwen-Image-Edit-Lightning`.
 * Aug 24, 2025: 👋 Release [Qwen-Image-Edit-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0-bf16.safetensors).
 * Aug 23, 2025: 👋 Release [Qwen-Image-Edit-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0-bf16.safetensors).
@@ -32,8 +32,9 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Qwen-Image-Lightning-4steps-V2.0
 * [ ] Qwen-Image-Edit-Lightning-4steps-V2.0
 
-## 📑 V1.0 V2.0 Comparison
-
+## 📑 Comparison between V1.x and V2.x
+Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
+### Qwen-Image-Lightning
 | 4steps-V1.0 NFE=4 | 4steps-V2.0 NFE=4 |
 |---|---|
 | ![111](https://github.com/user-attachments/assets/03cc4358-2357-45a7-87f1-94a1c776e845) | ![112](https://github.com/user-attachments/assets/99b5a739-6452-4a8b-9e5b-d44d9a2ff080) |
