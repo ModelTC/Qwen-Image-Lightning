@@ -3,7 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
-* Sep 10, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V2.0.safetensors). Please see [the comparison](#-v10-v20-comparison).
+* Sep 10, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V2.0.safetensors). Please see [the comparison between V1.x and V2.x](#-comparison-between-v1x-and-v2x).
 * Aug 28, 2025: 👋 Release workflows for `Qwen-Image-Edit-Lightning`.
 * Aug 24, 2025: 👋 Release [Qwen-Image-Edit-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0-bf16.safetensors).
 * Aug 23, 2025: 👋 Release [Qwen-Image-Edit-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-8steps-V1.0-bf16.safetensors).
@@ -17,7 +17,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [Diffusers](https://github.com/huggingface/diffusers) now supports loading Qwen-Image-Lightning within the Qwen-Image pipeline. Please check [their documentation](https://huggingface.co/docs/diffusers/main/api/pipelines/qwenimage) for details.
 * [ComfyUI](https://github.com/comfyanonymous/ComfyUI) provides native workflows for [Qwen-Image](https://docs.comfy.org/tutorials/image/qwen/qwen-image) and [Qwen-Image-Edit](https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit), including Lightning LoRA weights.
 * [Nunchaku](https://github.com/nunchaku-tech/nunchaku) has released 4-bit [Qwen-Image lightning](https://huggingface.co/nunchaku-tech/nunchaku-qwen-image). Try their [example script](https://github.com/nunchaku-tech/nunchaku/blob/main/examples/v1/qwen-image-lightning.py) to reduce inference GPU memory usage.
-* [cache-dit](https://github.com/vipshop/cache-dit) now supports **3.5** steps inference for [Qwen-Image-Lightning](https://github.com/vipshop/cache-dit/blob/main/examples/pipeline/run_qwen_image_lightning.py) with cache acceleration.
+* [Cache-dit](https://github.com/vipshop/cache-dit) now supports **3.5** steps inference for [Qwen-Image-Lightning](https://github.com/vipshop/cache-dit/blob/main/examples/pipeline/run_qwen_image_lightning.py) with cache acceleration.
 
 ## 📑 Todo List
 
