@@ -3,6 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
+* Sep 12, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V2.0.safetensors).
 * Sep 10, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V2.0.safetensors). Please see [the comparison between V1.x and V2.x](#-comparison-between-v1x-and-v2x).
 * Aug 28, 2025: 👋 Release workflows for `Qwen-Image-Edit-Lightning`.
 * Aug 24, 2025: 👋 Release [Qwen-Image-Edit-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-Lightning-4steps-V1.0-bf16.safetensors).
@@ -35,10 +36,10 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 ## 📑 Comparison between V1.x and V2.x
 Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
 ### Qwen-Image-Lightning
-| 4steps-V1.0 NFE=4 | 4steps-V2.0 NFE=4 |
-|---|---|
-| ![111](https://github.com/user-attachments/assets/03cc4358-2357-45a7-87f1-94a1c776e845) | ![112](https://github.com/user-attachments/assets/99b5a739-6452-4a8b-9e5b-d44d9a2ff080) |
-| ![111](https://github.com/user-attachments/assets/deb73eeb-05fe-4fb5-bde5-4e038b4d5118) | ![112](https://github.com/user-attachments/assets/158890c4-8dc5-4009-847c-1c9abb5a82ae) |
+| 4steps-V1.0 NFE=4 | 4steps-V2.0 NFE=4 | 8steps-V1.1 NFE=8 | 8steps-V2.0 NFE=8 |
+|---|---|---|---|
+| ![111](https://github.com/user-attachments/assets/03cc4358-2357-45a7-87f1-94a1c776e845) | ![112](https://github.com/user-attachments/assets/99b5a739-6452-4a8b-9e5b-d44d9a2ff080) | ![113](https://github.com/user-attachments/assets/f5da20ed-6b24-436e-969d-bc00a15a1ae2) | ![114](https://github.com/user-attachments/assets/d70298f8-2ce7-4ddc-816b-acf72fc26692) |
+| ![111](https://github.com/user-attachments/assets/deb73eeb-05fe-4fb5-bde5-4e038b4d5118) | ![112](https://github.com/user-attachments/assets/158890c4-8dc5-4009-847c-1c9abb5a82ae) | ![113](https://github.com/user-attachments/assets/f6d0f497-0a69-4a49-b2c4-1c3107b03f94) | ![114](https://github.com/user-attachments/assets/16ee403a-f316-479b-a7fb-11010bf12ca1) |
 
 
 ## 📑 T2I Performance Report
