@@ -22,16 +22,12 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 
 ## 📑 Todo List
 
-* [x] Qwen-Image-Lightning-8steps-V1.1
-* [x] Qwen-Image-Lightning-8steps-V1.0
-* [x] Qwen-Image-Lightning-4steps-V1.0
+* [x] Qwen-Image-Lightning-4/8steps-V1.x
 * [x] ComfyUI Workflow
-* [x] Improve Quality
-* [x] Qwen-Image-Edit-Lightning-8steps-V1.0
-* [x] Qwen-Image-Edit-Lightning-4steps-V1.0
+* [x] Qwen-Image-Edit-Lightning-4/8steps-V1.0
 * [x] Qwen Edit ComfyUI Workflow
-* [x] Qwen-Image-Lightning-4steps-V2.0
-* [ ] Qwen-Image-Edit-Lightning-4steps-V2.0
+* [x] Qwen-Image-Lightning-4/8steps-V2.0
+* [ ] Qwen-Image-Edit-Lightning-4/8steps-V2.0
 
 ## 📑 Comparison between V1.x and V2.x
 Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
