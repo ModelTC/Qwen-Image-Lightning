@@ -1,0 +1,14 @@
+Change the person to a standing position, bending over to hold the dog's front paws.
+Replace the words 'HEALTH INSURANCE' on the letter blocks with 'Tomorrow will be better'.
+Replace the words 'HEALTH INSURANCE' on the letter blocks with '明天会更好'.
+Replace the polka-dot shirt with a light blue shirt.
+Change the background to Antarctica.
+Generate a cartoon profile picture of the person.
+Remove the hair from the plate.
+Transform the character in the image into an anime style, and add the text: "Accelerate image generation and editing with Lightx2V Qwen-Image-Lightning".
+将图中的人物改为日漫风格，并给图片添加文字“使用Lightx2V Qwen-Image-Lightning 加速图像生成和图片编辑”。
+将图中红色框中的文字改为"殇",只改变框内的画面，框外的画面维持不变。
+根据图1中的女性和图2中的男性，生成一组结婚照，并遵循以下描述：新郎穿着红色的中式马褂，新娘穿着精致的秀禾服，头戴金色凤冠。他们并肩站立在古老的朱红色宫墙前，背景是雕花的木窗。光线明亮柔和，构图对称，氛围喜庆而庄重。
+图1中的女生站在图2的车旁边
+Make the girl from Image 1 wear the black dress from Image 2 and sit in the pose from Image 3.
+Make the girl from Image 1 wear the necklace from Image 2 and carry the bag from Image 3 on her left shoulder.

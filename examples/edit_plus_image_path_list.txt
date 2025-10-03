@@ -1,0 +1,14 @@
+./examples/qwen_image_edit/qwen_edit1.webp
+./examples/qwen_image_edit/qwen_edit2.webp
+./examples/qwen_image_edit/qwen_edit2.webp
+./examples/qwen_image_edit/qwen_edit3.png
+./examples/qwen_image_edit/qwen_edit4.png
+./examples/qwen_image_edit/qwen_edit5.png
+./examples/qwen_image_edit/qwen_edit6.webp
+./examples/qwen_image_edit/qwen_edit7.webp
+./examples/qwen_image_edit/qwen_edit7.webp
+./examples/qwen_image_edit/qwen_edit8.png
+./examples/qwen_image_edit_plus/qwen_edit_plus1_1.png ./examples/qwen_image_edit_plus/qwen_edit_plus1_2.png
+./examples/qwen_image_edit_plus/qwen_edit_plus2_1.png ./examples/qwen_image_edit_plus/qwen_edit_plus2_2.png
+./examples/qwen_image_edit_plus/qwen_edit_plus3_1.webp ./examples/qwen_image_edit_plus/qwen_edit_plus3_2.webp ./examples/qwen_image_edit_plus/qwen_edit_plus3_3.webp
+./examples/qwen_image_edit_plus/qwen_edit_plus4_1.webp ./examples/qwen_image_edit_plus/qwen_edit_plus4_2.webp ./examples/qwen_image_edit_plus/qwen_edit_plus4_3.webp

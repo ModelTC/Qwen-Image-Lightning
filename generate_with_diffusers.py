@@ -7,6 +7,7 @@ from diffusers import (
     DiffusionPipeline,
     FlowMatchEulerDiscreteScheduler,
     QwenImageEditPipeline,
+    QwenImageEditPlusPipeline,
 )
 from diffusers.models import QwenImageTransformer2DModel
 import torch
@@ -32,7 +33,10 @@ def main(
     if image_path_list_file is None:
         pipe_cls = DiffusionPipeline
     else:
-        pipe_cls = QwenImageEditPipeline
+        if "2509" in model_name:
+            pipe_cls = QwenImageEditPlusPipeline
+        else:
+            pipe_cls = QwenImageEditPipeline
 
     if lora_path is not None:
         model = QwenImageTransformer2DModel.from_pretrained(
@@ -93,7 +97,7 @@ def main(
         image_path_list = None
 
     os.makedirs(out_dir, exist_ok=True)
-
+    
     for _, (width, height) in aspect_ratios.items():
         for i, prompt in enumerate(prompt_list):
             if image_path_list is None:
@@ -109,7 +113,11 @@ def main(
                 input_args["width"] = width
                 input_args["height"] = height
             else:
-                input_args["image"] = Image.open(image_path_list[i]).convert("RGB")
+                if "2509" in model_name:
+                    image_paths = image_path_list[i].split(" ")
+                    input_args["image"] = [Image.open(image_path).convert("RGB") for image_path in image_paths]
+                else:
+                    input_args["image"] = Image.open(image_path_list[i]).convert("RGB")
 
             image = pipe(**input_args).images[0]
 

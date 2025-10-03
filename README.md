@@ -28,6 +28,8 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Qwen Edit ComfyUI Workflow
 * [x] Qwen-Image-Lightning-4/8steps-V2.0
 * [ ] Qwen-Image-Edit-Lightning-4/8steps-V2.0
+* [ ] Qwen-Image-Edit-2509-Lightning-4/8steps-V1.0
+* [ ] Qwen Edit 2509 ComfyUI Workflow
 
 ## 📑 Comparison between V1.x and V2.x
 Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
@@ -129,7 +131,11 @@ We compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers
 
 ### Installation
 
-Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
+- Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
+- For the Qwen-Image-Edit-2509, Please install diffusers v0.36.0.dev0 by
+```
+pip install git+https://github.com/huggingface/diffusers
+```
 
 ### Model Download
 
@@ -210,6 +216,44 @@ python generate_with_diffusers.py \
 --base_seed 42 --steps 50 --cfg 4.0
 ```
 
+### Run 8-step Edit-2509 Model
+
+``` sh
+# 8 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_plus_prompt_list.txt \
+--image_path_list_file examples/edit_plus_image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit-2509 \
+--out_dir test_lora_8_step_edit_2509_results \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors \
+--base_seed 42 --steps 8 --cfg 1.0
+```
+
+### Run 4-step Edit-2509 Model
+
+``` sh
+# 4 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_plus_prompt_list.txt \
+--image_path_list_file examples/edit_plus_image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit-2509 \
+--out_dir test_lora_4_step_edit_2509_results \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-fp32.safetensors \
+--base_seed 42 --steps 4 --cfg 1.0
+```
+
+### Run Base Edit-2509 Model
+
+``` sh
+# 40 steps, cfg 4.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_plus_prompt_list.txt \
+--image_path_list_file examples/edit_plus_image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit-2509 \
+--out_dir test_base_40_step_edit_2509_results \
+--base_seed 42 --steps 40 --cfg 4.0
+```
+
 ## 🎨 ComfyUI Workflow
 
 ComfyUI workflow is available in the `workflows/` directory. 
@@ -225,6 +269,8 @@ ComfyUI workflow is available in the `workflows/` directory.
 * `workflows/qwen-image-4steps.json` - 4-step lightning workflow for Qwen-Image
 * `workflows/qwen-image-edit-8steps.json` - 8-step lightning workflow for Qwen-Image-Edit
 * `workflows/qwen-image-edit-4steps.json` - 4-step lightning workflow for Qwen-Image-Edit
+* `workflows/qwen-image-edit-2509-8steps.json` - 8-step lightning workflow for Qwen-Image-Edit-2509
+* `workflows/qwen-image-edit-2509-4steps.json` - 4-step lightning workflow for Qwen-Image-Edit-2509
 
 ### Usage
 
@@ -236,7 +282,10 @@ ComfyUI workflow is available in the `workflows/` directory.
 4. For **Qwen Image Edit** workflows:
    - **8-step**: Load `workflows/qwen-image-edit-8steps.json`, put `Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
    - **4-step**: Load `workflows/qwen-image-edit-4steps.json`, put `Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
-5. Run the workflow to generate images
+5. For **Qwen Image Edit 2509** workflows:
+   - **8-step**: Load `workflows/qwen-image-edit-2509-8steps.json`, put `Qwen-Image-Edit-Lightning-2509-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
+   - **4-step**: Load `workflows/qwen-image-edit-2509-4steps.json`, put `Qwen-Image-Edit-Lightning-2509-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
+6. Run the workflow to generate images
 
 ## License Agreement
 
@@ -248,7 +297,7 @@ We built upon and reused code from the following projects: [Qwen-Image](https://
 
 The evaluation text prompts are from [Qwen-Image](https://github.com/QwenLM/Qwen-Image), [Qwen-Image Blog](https://qwenlm.github.io/blog/qwen-image/) and [Qwen-Image-Service](https://huggingface.co/spaces/Qwen/Qwen-Image).
 
-The test cases for Image Editing are from [Qwen-Image-Edit-api](https://www.alibabacloud.com/help/en/model-studio/qwen-image-edit-api) and [reddit](https://www.reddit.com/r/comfyui/comments/1mue7k0/testing_the_new_qwen_image_editing_q4_gguf_and_4/).
+The test cases for Image Editing are from [Qwen-Image-Edit-api](https://www.alibabacloud.com/help/en/model-studio/qwen-image-edit-api), [reddit](https://www.reddit.com/r/comfyui/comments/1mue7k0/testing_the_new_qwen_image_editing_q4_gguf_and_4/) and [Chat-Qwen-AI](https://chat.qwen.ai/)
 
 ## Star History
 
