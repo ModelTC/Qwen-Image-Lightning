@@ -133,7 +133,7 @@ We compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers
 ### Installation
 
 - Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
-- For the Qwen-Image-Edit-2509, please install latest diffusers from their main branch by
+- For the Qwen-Image-Edit-2509, please install the latest diffusers from their main branch by
 ```sh
 pip install git+https://github.com/huggingface/diffusers
 ```
