@@ -3,6 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
+* Oct 06, 2025: 👋 Release [Qwen-Image-Edit-2509-Lightning-4steps-V1.0], [Qwen-Image-Edit-2509-Lightning-8steps-V1.0] and their bf16 version(https://huggingface.co/lightx2v/Qwen-Image-Lightning/tree/main/Qwen-Image-Edit-2509).
 * Sep 12, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V2.0.safetensors).
 * Sep 10, 2025: 👋 Release [Qwen-Image-Lightning-4steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V2.0.safetensors). Please see [the comparison between V1.x and V2.x](#-comparison-between-v1x-and-v2x).
 * Aug 28, 2025: 👋 Release workflows for `Qwen-Image-Edit-Lightning`.
@@ -28,8 +29,8 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Qwen Edit ComfyUI Workflow
 * [x] Qwen-Image-Lightning-4/8steps-V2.0
 * [ ] Qwen-Image-Edit-Lightning-4/8steps-V2.0
-* [ ] Qwen-Image-Edit-2509-Lightning-4/8steps-V1.0
-* [ ] Qwen Edit 2509 ComfyUI Workflow
+* [x] Qwen-Image-Edit-2509-Lightning-4/8steps-V1.0
+* [x] Qwen Edit 2509 ComfyUI Workflow
 
 ## 📑 Comparison between V1.x and V2.x
 Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
@@ -132,8 +133,8 @@ We compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers
 ### Installation
 
 - Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
-- For the Qwen-Image-Edit-2509, Please install diffusers v0.36.0.dev0 by
-```
+- For the Qwen-Image-Edit-2509, please install latest diffusers from their main branch by
+```sh
 pip install git+https://github.com/huggingface/diffusers
 ```
 
@@ -283,8 +284,8 @@ ComfyUI workflow is available in the `workflows/` directory.
    - **8-step**: Load `workflows/qwen-image-edit-8steps.json`, put `Qwen-Image-Edit-Lightning-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
    - **4-step**: Load `workflows/qwen-image-edit-4steps.json`, put `Qwen-Image-Edit-Lightning-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
 5. For **Qwen Image Edit 2509** workflows:
-   - **8-step**: Load `workflows/qwen-image-edit-2509-8steps.json`, put `Qwen-Image-Edit-Lightning-2509-8steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
-   - **4-step**: Load `workflows/qwen-image-edit-2509-4steps.json`, put `Qwen-Image-Edit-Lightning-2509-4steps-V1.0.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
+   - **8-step**: Load `workflows/qwen-image-edit-2509-8steps.json`, put `Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 8
+   - **4-step**: Load `workflows/qwen-image-edit-2509-4steps.json`, put `Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-fp32.safetensors` into `ComfyUI/models/loras/`, and set `KSampler` steps to 4
 6. Run the workflow to generate images
 
 ## License Agreement

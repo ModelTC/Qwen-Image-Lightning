@@ -29,11 +29,16 @@ def main(
     else:
         torch_dtype = torch.float32
         device = "cpu"
+    
+    if "2509" in model_name:
+        is_edit_plus = True
+    else:
+        is_edit_plus = False
 
     if image_path_list_file is None:
         pipe_cls = DiffusionPipeline
     else:
-        if "2509" in model_name:
+        if is_edit_plus:
             pipe_cls = QwenImageEditPlusPipeline
         else:
             pipe_cls = QwenImageEditPipeline
@@ -113,7 +118,7 @@ def main(
                 input_args["width"] = width
                 input_args["height"] = height
             else:
-                if "2509" in model_name:
+                if is_edit_plus:
                     image_paths = image_path_list[i].split(" ")
                     input_args["image"] = [Image.open(image_path).convert("RGB") for image_path in image_paths]
                 else:

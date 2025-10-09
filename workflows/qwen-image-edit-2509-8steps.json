@@ -876,7 +876,7 @@
         }
       },
       "widgets_values": [
-        "Qwen-Image-Edit-2509-Lightning-8steps-V1.0.safetensors",
+        "Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors",
         1
       ]
     }
