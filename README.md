@@ -226,7 +226,7 @@ python generate_with_diffusers.py \
 --image_path_list_file examples/edit_plus_image_path_list.txt \
 --model_name Qwen/Qwen-Image-Edit-2509 \
 --out_dir test_lora_8_step_edit_2509_results \
---lora_path Qwen-Image-Lightning/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors \
 --base_seed 42 --steps 8 --cfg 1.0
 ```
 
@@ -239,7 +239,7 @@ python generate_with_diffusers.py \
 --image_path_list_file examples/edit_plus_image_path_list.txt \
 --model_name Qwen/Qwen-Image-Edit-2509 \
 --out_dir test_lora_4_step_edit_2509_results \
---lora_path Qwen-Image-Lightning/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-fp32.safetensors \
+--lora_path Qwen-Image-Lightning/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors \
 --base_seed 42 --steps 4 --cfg 1.0
 ```
 
