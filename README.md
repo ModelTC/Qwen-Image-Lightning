@@ -3,7 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
-* Dec 22, 2025: 👋 Release [Qwen-Image-Edit-2511-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-fp32.safetensors), its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors), and its [scaled fp8 version of fused fp32 lora and base model](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/qwen_image_edit_2511_fp8_e4m3fn_scaled_lightning.safetensors).
+* Dec 22, 2025: 👋 Release [Qwen-Image-Edit-2511-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-fp32.safetensors), its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors), and [a fused fp8 model combining the bf16 base and fp32 LoRA](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/qwen_image_edit_2511_fp8_e4m3fn_scaled_lightning.safetensors).
 * Oct 14, 2025: 👋 [Compatibility issues](https://github.com/ModelTC/Qwen-Image-Lightning/issues/32) associated with using the Lightning LoRA alongside the [Qwen-Image FP8 base model](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors) have been resolved. To resolve this issue, we provide two alternative approaches. Please consult [the section below](#-using-lightning-loras-with-fp8-models) for guidance on which model to download based on your specific technical constraints and performance needs.
 * Oct 09, 2025: 👋 Release [Qwen-Image-Edit-2509-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors), [Qwen-Image-Edit-2509-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors).
 * Sep 12, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V2.0.safetensors).
@@ -146,7 +146,7 @@ We compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers
 | ![181](https://github.com/user-attachments/assets/ee2cc286-445c-49f5-8910-8656ca478a13)  | 将图中红色框中的文字改为"殇",只改变框内的画面，框外的画面维持不变。 | ![182](https://github.com/user-attachments/assets/9267dda5-c788-4cd4-9811-448b06a4e2e9) | ![183](https://github.com/user-attachments/assets/4b7df2b5-c867-4d27-8aab-49b15b71c82d) | ![184](https://github.com/user-attachments/assets/948841a5-4653-4ce0-b246-94b305c04ab5) |
 
 
-## 🚀 Run Evaluation and Test by LightX2V
+## 🚀 Run Evaluation and Test with LightX2V
 
 ### Installation
 
@@ -168,7 +168,7 @@ python examples/qwen_image/qwen_2511_with_distill_lora.py
 python examples/qwen_image/qwen_2511_fp8.py
 ```
 
-## 🚀 Run Evaluation and Test by Diffusers
+## 🚀 Run Evaluation and Test with Diffusers
 
 ### Installation
 
