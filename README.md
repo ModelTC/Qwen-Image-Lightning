@@ -3,6 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
+* Dec 22, 2025: 👋 Release [Qwen-Image-Edit-2511-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-fp32.safetensors), its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors), and its [scaled fp8 version of fused fp32 lora and base model](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/qwen_image_edit_2511_fp8_e4m3fn_scaled_lightning.safetensors).
 * Oct 14, 2025: 👋 [Compatibility issues](https://github.com/ModelTC/Qwen-Image-Lightning/issues/32) associated with using the Lightning LoRA alongside the [Qwen-Image FP8 base model](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors) have been resolved. To resolve this issue, we provide two alternative approaches. Please consult [the section below](#-using-lightning-loras-with-fp8-models) for guidance on which model to download based on your specific technical constraints and performance needs.
 * Oct 09, 2025: 👋 Release [Qwen-Image-Edit-2509-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors), [Qwen-Image-Edit-2509-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors).
 * Sep 12, 2025: 👋 Release [Qwen-Image-Lightning-8steps-V2.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-8steps-V2.0.safetensors).
@@ -32,6 +33,8 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [ ] Qwen-Image-Edit-Lightning-4/8steps-V2.0
 * [x] Qwen-Image-Edit-2509-Lightning-4/8steps-V1.0
 * [x] Qwen Edit 2509 ComfyUI Workflow
+* [x] Qwen-Image-Edit-2511-Lightning-4steps-V1.0
+* [ ] Qwen Edit 2511 ComfyUI Workflow
 
 ## 📑 Comparison between V1.x and V2.x
 Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
@@ -143,12 +146,34 @@ We compare the performance of the three models, i.e., `Qwen-Image-Edit-Diffusers
 | ![181](https://github.com/user-attachments/assets/ee2cc286-445c-49f5-8910-8656ca478a13)  | 将图中红色框中的文字改为"殇",只改变框内的画面，框外的画面维持不变。 | ![182](https://github.com/user-attachments/assets/9267dda5-c788-4cd4-9811-448b06a4e2e9) | ![183](https://github.com/user-attachments/assets/4b7df2b5-c867-4d27-8aab-49b15b71c82d) | ![184](https://github.com/user-attachments/assets/948841a5-4653-4ce0-b246-94b305c04ab5) |
 
 
-## 🚀 Run Evaluation and Test
+## 🚀 Run Evaluation and Test by LightX2V
+
+### Installation
+
+```sh
+git clone https://github.com/ModelTC/LightX2V.git
+cd LightX2V
+pip install -v -e .
+```
+
+### Run 4-step Edit-2511 Model
+
+```sh
+python examples/qwen_image/qwen_2511_with_distill_lora.py
+```
+
+### Run Base Edit-2511 Model
+
+``` sh
+python examples/qwen_image/qwen_2511_fp8.py
+```
+
+## 🚀 Run Evaluation and Test by Diffusers
 
 ### Installation
 
 - Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
-- For the Qwen-Image-Edit-2509, please install the latest diffusers from their main branch by
+- For the Qwen-Image-Edit-2509 and Qwen-Image-Edit-2511, please install the latest diffusers from their main branch by
 ```sh
 pip install git+https://github.com/huggingface/diffusers
 ```
@@ -267,6 +292,31 @@ python generate_with_diffusers.py \
 --image_path_list_file examples/edit_plus_image_path_list.txt \
 --model_name Qwen/Qwen-Image-Edit-2509 \
 --out_dir test_base_40_step_edit_2509_results \
+--base_seed 42 --steps 40 --cfg 4.0
+```
+
+### Run 4-step Edit-2511 Model
+
+``` sh
+# 4 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_plus_prompt_list.txt \
+--image_path_list_file examples/edit_plus_image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit-2511 \
+--out_dir test_lora_4_step_edit_2511_results \
+--lora_path Qwen-Image-Edit-2511-Lightning/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-fp32.safetensors \
+--base_seed 42 --steps 4 --cfg 1.0
+```
+
+### Run Base Edit-2511 Model
+
+``` sh
+# 40 steps, cfg 4.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/edit_plus_prompt_list.txt \
+--image_path_list_file examples/edit_plus_image_path_list.txt \
+--model_name Qwen/Qwen-Image-Edit-2511 \
+--out_dir test_base_40_step_edit_2511_results \
 --base_seed 42 --steps 40 --cfg 4.0
 ```
 

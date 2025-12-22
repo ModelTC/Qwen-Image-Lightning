@@ -30,7 +30,7 @@ def main(
         torch_dtype = torch.float32
         device = "cpu"
     
-    if "2509" in model_name:
+    if "2509" or "2511" in model_name:
         is_edit_plus = True
     else:
         is_edit_plus = False
