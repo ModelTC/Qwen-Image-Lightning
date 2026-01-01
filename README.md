@@ -3,6 +3,7 @@
 We are excited to release the distilled version of [Qwen-Image](https://github.com/QwenLM/Qwen-Image). It preserves the capability of complex text rendering.
 
 ## 🔥 Latest News
+* Jan 01, 2026: 👋 Release [Qwen-Image-2512-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/blob/main/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-2512-Lightning/blob/main/Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors).
 * Dec 22, 2025: 👋 Release [Qwen-Image-Edit-2511-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-fp32.safetensors), its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors), and [a fused fp8 model combining the bf16 base and fp32 LoRA](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/blob/main/qwen_image_edit_2511_fp8_e4m3fn_scaled_lightning.safetensors).
 * Oct 14, 2025: 👋 [Compatibility issues](https://github.com/ModelTC/Qwen-Image-Lightning/issues/32) associated with using the Lightning LoRA alongside the [Qwen-Image FP8 base model](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors) have been resolved. To resolve this issue, we provide two alternative approaches. Please consult [the section below](#-using-lightning-loras-with-fp8-models) for guidance on which model to download based on your specific technical constraints and performance needs.
 * Oct 09, 2025: 👋 Release [Qwen-Image-Edit-2509-Lightning-4steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-4steps-V1.0-bf16.safetensors), [Qwen-Image-Edit-2509-Lightning-8steps-V1.0](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-fp32.safetensors) and its [bf16 version](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Edit-2509/Qwen-Image-Edit-2509-Lightning-8steps-V1.0-bf16.safetensors).
@@ -35,6 +36,7 @@ We are excited to release the distilled version of [Qwen-Image](https://github.c
 * [x] Qwen Edit 2509 ComfyUI Workflow
 * [x] Qwen-Image-Edit-2511-Lightning-4steps-V1.0
 * [ ] Qwen Edit 2511 ComfyUI Workflow
+* [x] Qwen-Image-2512-Lightning-4steps-V1.0
 
 ## 📑 Comparison between V1.x and V2.x
 Compared to V1.0, V2.0  produces images with reduced over-saturation, resulting in improved skin texture and more natural-looking visuals. 
@@ -168,12 +170,16 @@ python examples/qwen_image/qwen_2511_with_distill_lora.py
 python examples/qwen_image/qwen_2511_fp8.py
 ```
 
+### Run Qwen-Image-2512 Model
+
+- Please follow the instructions in [LightX2V](https://github.com/ModelTC/LightX2V/tree/main/examples/qwen_image#usage-method-1-using-bash-scripts-highly-recommended) to run inference on Qwen-Image-2512 model and its lightning lora with LightX2V.
+
 ## 🚀 Run Evaluation and Test with Diffusers
 
 ### Installation
 
 - Please follow [Qwen-Image](https://github.com/QwenLM/Qwen-Image) to install the **Python Environment**, e.g., diffusers v0.35.1, and download the **Base Model**.
-- For the Qwen-Image-Edit-2509 and Qwen-Image-Edit-2511, please install the latest diffusers from their main branch by
+- For the Qwen-Image-Edit-2509, Qwen-Image-Edit-2511 and Qwen-Image-2512, please install the latest diffusers from their main branch by
 ```sh
 pip install git+https://github.com/huggingface/diffusers
 ```
@@ -318,6 +324,29 @@ python generate_with_diffusers.py \
 --model_name Qwen/Qwen-Image-Edit-2511 \
 --out_dir test_base_40_step_edit_2511_results \
 --base_seed 42 --steps 40 --cfg 4.0
+```
+
+### Run 4-step Qwen-Image-2512 Model
+
+``` sh
+# 4 steps, cfg 1.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/prompt_list.txt \
+--model_name Qwen/Qwen-Image-2512 \
+--out_dir test_lora_4_step_qwen_image_2512_results \
+--lora_path Qwen-Image-2512-Lightning/Qwen-Image-2512-Lightning-4steps-V1.0-fp32.safetensors \
+--base_seed 42 --steps 4 --cfg 1.0
+```
+
+### Run base Qwen-Image-2512 Model
+
+``` sh
+# 50 steps, cfg 4.0
+python generate_with_diffusers.py \
+--prompt_list_file examples/prompt_list.txt \
+--model_name Qwen/Qwen-Image-2512 \
+--out_dir test_base_50_step_qwen_image_2512_results \
+--base_seed 42 --steps 50 --cfg 4.0
 ```
 
 ## 🎨 ComfyUI Workflow

@@ -30,10 +30,15 @@ def main(
         torch_dtype = torch.float32
         device = "cpu"
     
-    if "2509" in model_name or "2511" in model_name:
+    if "Qwen-Image-Edit-2509" in model_name or "Qwen-Image-Edit-2511" in model_name:
         is_edit_plus = True
     else:
         is_edit_plus = False
+
+    if "Qwen-Image-2512" in model_name:
+        negative_prompt = "低分辨率，低画质，肢体畸形，手指畸形，画面过饱和，蜡像感，人脸无细节，过度光滑，画面具有AI感。构图混乱。文字模糊，扭曲。"
+    else:
+        negative_prompt = " "
 
     if image_path_list_file is None:
         pipe_cls = DiffusionPipeline
@@ -111,7 +116,7 @@ def main(
                 "prompt": prompt,
                 "generator": torch.Generator(device=device).manual_seed(base_seed),
                 "true_cfg_scale": true_cfg_scale,
-                "negative_prompt": " ",
+                "negative_prompt": negative_prompt,
                 "num_inference_steps": num_inference_steps,
             }
             if image_path_list is None:
