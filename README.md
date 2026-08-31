@@ -401,9 +401,11 @@ The test cases for Image Editing are from [Qwen-Image-Edit-api](https://www.alib
 
 ## Citation
 
+```bibtex
 @misc{Qwen-Image-Lightning,
   title = {Qwen-Image-Lightning},
   author = {Xiangyu Fan and Zesong Qiu and Fanzhou Wang and Peng Gao and Lei Yang},
   year = {2025},
   url = {https://github.com/ModelTC/LightX2V-Qwen-Image-Lightning},
 }
+```
