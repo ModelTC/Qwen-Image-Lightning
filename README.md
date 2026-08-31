@@ -397,3 +397,13 @@ The test cases for Image Editing are from [Qwen-Image-Edit-api](https://www.alib
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=ModelTC/Qwen-Image-Lightning&type=Timeline)](https://www.star-history.com/#ModelTC/Qwen-Image-Lightning&Timeline)
+
+
+## Citation
+
+@misc{Qwen-Image-Lightning,
+  title = {Qwen-Image-Lightning},
+  author = {Xiangyu Fan and Zesong Qiu and Fanzhou Wang and Peng Gao and Lei Yang},
+  year = {2025},
+  url = {https://github.com/ModelTC/LightX2V-Qwen-Image-Lightning},
+}
